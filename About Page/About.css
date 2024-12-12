@@ -66,9 +66,13 @@ hr {
 }
 .main-para {
   margin-bottom: 40px;
+  margin-left: -2%;
+  margin-right: 5%;
 }
 .second-para {
   margin-bottom: 20px;
+  margin-left: -2%;
+  margin-right: 5%;
 }
 .our-story {
   margin-bottom: 20px;
@@ -146,7 +150,6 @@ hr {
   }
 
   .team {
-    /* display: grid; */
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -198,5 +201,18 @@ hr {
   }
   .individual {
     max-width: 30%;
+  }
+}
+@media (max-width: 550px) {
+  .main-para,
+  .second-para {
+    font-size: medium;
+    margin-left: -9%;
+    margin-right: 5%;
+  }
+  .our-story {
+    margin-top: -30px;
+    margin-bottom: 20px;
+    font-size: 20px;
   }
 }
