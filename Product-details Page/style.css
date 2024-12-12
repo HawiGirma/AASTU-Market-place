@@ -162,9 +162,9 @@ h4 {
     
    
    .items > .item > .eye {
-       left:13rem ; /* Resetting right positioning */
+       left:13rem ; 
        bottom: rem;
-       padding:auto; /* Allowing more flexibility in padding */
+       padding:auto; 
    }
    .items > .item > .love{
         
@@ -257,7 +257,7 @@ h4 {
  
  @media (max-width: 480px) {
     body {
-        font-size :14px ; /
+        font-size :14px ; 
     }
  
     h4 {
@@ -266,7 +266,23 @@ h4 {
  
     .discription, .main, .items {
         flex-direction :column ; 
+        justify-content: center;
         text-align :center ; 
+    }
+    .main > .image1,
+   .main > .image2,
+   .main > .image3,
+   .main > .image4,
+   .main >.image5
+    {
+    
+       width: 100%;
+       padding-left :10px ; 
+       
+    }
+    .main >.image5 > img{
+        width: 300px;
+
     }
    
  }
@@ -277,11 +293,15 @@ h4 {
     .main > .image1,
    .main > .image2,
    .main > .image3,
-   .main > .image4,
-   .main > .image5 {
+   .main > .image4
+    {
        width: 100%;
        padding-left :10px ; 
     }
+    .main > .image5 > img{
+        width: 250px;
+    }
+    
  
     h4 {
         font-size: 1rem; 
@@ -293,18 +313,17 @@ h4 {
     }
  
     .discription {
-        margin-left: 5px;
-        padding-right: 5px;
+        
         text-align: left; 
     }
  
     .items {
         flex-direction: column;
-        align-items: stretch; 
+        align-items: stretc; 
     }
  
     .items > .item > img {
-        width: 100%; 
+        
         max-width: none;
     }
  
@@ -316,6 +335,7 @@ h4 {
 
     .sub-nav{
         font-size: 12px;
+        margin-left: 0;
     }
  }
 

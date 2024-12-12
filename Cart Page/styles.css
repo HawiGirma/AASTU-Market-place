@@ -164,24 +164,15 @@
 
     }
     @media (max-width: 900px) {
-        .product-list {
-            flex-direction: column; 
-            margin-left: 2rem; 
-            margin-right: 2rem; 
-            padding: 1rem; 
-            box-shadow: none; 
-        }
+       
      .prolist{
         font-weight: 500;
      }
-     .product-list > .price{
-        position: relative;
-        right: 3.6rem;
-     }
+     
         .product-list > .item > p {
             left: 0; 
             bottom: auto; 
-            margin-left: rem; 
+            
             margin-bottom: 10px; 
         }
     
@@ -250,12 +241,27 @@
            bottom:auto; 
        }
     }
+
+    @media (max-width:528px) {
+        
+        .prolist{
+            font-size: 9px;
+           }
+         .selected{
+            font-size: 9px;
+         }  
+        
+    }
     
     @media (max-width: 480px) {
        .product-list > .item > .img1 {
-           width: 30px; 
-           height: 30px; 
+           width: 40px; 
+           height: 40px;
+           padding: 0;
        }
+       .prolist > .price{
+        margin-left: 0;
+     }
     
        .cart-buttons > .button > input {
            width: 100%; 
@@ -273,5 +279,51 @@
            width: auto; 
            margin-bottom :10px ;
        }
+    }
+
+    @media (max-width: 392px){
+       
+        .products{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+          
+           
+            }
+        .product-list{
+            display: flex;
+            flex-direction: column;
+            box-shadow: none;
+            margin-left:0 ;
+            margin-right: 0;
+            padding-right: 0;
+
+        }
+        .prolist{
+            margin-top: 5rem;
+          padding-left: 0;
+          padding-right: 3rem;
+        }
+        .prolist > .price{
+           margin-left: 0;
+
+        }
+       .selected{
+       
+       padding-left: 0;
+       margin-bottom: 1rem;
+       
+       }
+       .selected > .items > input{
+        width: 30px;
+        height: 25px;
+       }
+        .product-list > .item > p {
+            
+            left: 0;
+            top: 0;
+        }
+        
     }
         

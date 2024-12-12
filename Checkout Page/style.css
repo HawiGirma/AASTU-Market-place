@@ -242,8 +242,9 @@ input[type="checkbox"]:checked:after {
    }
 
    .checkout {
-       padding-right: 30rem; 
-       padding-left: 3rem; 
+    justify-content: center;
+       padding-right: 6rem; 
+       padding-left: 9rem; 
    }
 
    .selected-items > .items {
@@ -277,24 +278,26 @@ input[type="checkbox"]:checked:after {
        margin-top :3%; 
    }
 
+
    .checkout {
-       padding-right :5rem ; 
-       padding-left :1rem ;
-       margin-top :2rem ; 
+    justify-content: center;
+       padding-right: 6rem; 
+       padding-left: 5rem; 
    }
 
    .selected-items > .items {
-       flex-direction :column ; 
        justify-content:center ;
        left:auto ; 
        bottom:auto ; 
    }
    .selected-items > .item{
-    margin-left: 4rem;
+    margin-left: 7rem;
    }
-
+    
+        
    .total {
-       margin-left :0 ; 
+    justify-self: center;
+     
        margin-top :2rem ; 
    }
 
@@ -303,11 +306,14 @@ input[type="checkbox"]:checked:after {
    }
 
    .coupon, .order {
+    display: flex;
        margin-right:auto ; 
        margin-left:auto ; 
        flex-direction :column ;  
        align-items:center ;
+       justify-content: center;
    }
+   
 }
 
 @media (max-width: 480px) {
@@ -322,16 +328,19 @@ input[type="checkbox"]:checked:after {
        padding-right :2rem ; 
        padding-left :1rem ; 
    }
+   
 
    .selected-items > .items {
-       flex-direction :column ; 
+    display: flex;
+       flex-direction :row ; 
        justify-content:center ; 
        align-items:center ; 
+       margin: 0;
        bottom:auto ; 
    }
 
    .selected-items > .price > p,
-   .total > payment-method { 
+   .total > .payment-method { 
       display:flex ;
       flex-direction :column ;
       align-items:center ;
@@ -373,4 +382,5 @@ input[type="checkbox"]:checked:after {
   .selected-items > .price{
     margin-left: 4rem;
   }
+  
 }
