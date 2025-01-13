@@ -93,6 +93,7 @@ main {
   background-color: #ccc;
   border-radius: 50%;
   margin: 0 5px;
+  cursor: pointer;
 }
 
 .dots .active {
@@ -107,6 +108,9 @@ main {
 
 .banner-content {
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .banner h2 {
