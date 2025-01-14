@@ -166,6 +166,7 @@ dots.forEach((dot, index) => {
     dot.preventDefault();
   });
 });
+
 //js applied on product details page
 document.addEventListener('DOMContentLoaded', () => {
   

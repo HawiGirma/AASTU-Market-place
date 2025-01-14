@@ -202,9 +202,11 @@ footer a:hover {
 /*Styles applied to The Dropdown*/
 .menu-container {
   display: grid;
+
   position:absolute;
   right: 0;
   z-index: 1000;
+
   grid-template-columns: repeat(4, 1fr);
 }
 .sidebar {
