@@ -24,7 +24,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
     href="../Cart Page/styles.css">
-   
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script type="module" src="/JavaScript/Script1.js" defer></script>
 </head>
 <body>
     <header>
@@ -63,7 +67,7 @@
           <a href="/Cart Page/index.html"
             ><img src="/Assets/Cart1.png" alt="View Cart"
           /></a>
-          <a href="/Account Settings/AccountSetting page.html"
+          <a id="AccountSetting"  href="/Account Settings/AccountSetting page.html"
             ><img src="/Assets/user.png" alt="Account Settings"
           /></a>
         </div>
@@ -76,14 +80,15 @@
         <p style="display: inline; color: black">&ensp;Cart</p>
       </div>
       <section class="products">
-    <div class="product-list prolist ">
+    <div class="product-list prolist " id="product-list">
         <div class="product">
             <p>Product</p> </div>
-        <div class="price">
+        <div class="price" id="price">
            <p>Price</p>
 
         </div>
-        <div class="quantity">
+        <div class="quantity" id="quantity">
+            
            <p>Quantity</p> 
         </div>
         <div class="sub-total">
@@ -91,7 +96,7 @@
     </div>
      
     <div class="product-list selected">
-        <div class="item items">
+        <div class="item items" id="item">
             <img class="img1" src="../Assets/Frame 613.png" alt="LCD monitor">
             <p>LCD monitor</p>
         </div>
@@ -123,7 +128,7 @@
   </div>
 </section>
 
-       <div class="cart-buttons">
+       <div class="cart-buttons" id="cart-buttons">
     <div class="return button">
         <input type="button" value="Return to Shop">
 
@@ -133,7 +138,7 @@
     </div>
 </div>
 
-<div class="cart-total">
+<div class="cart-total" id="cart-total">
     <h5 >Cart Total</h5>
     <div class="data">
     <p>Subtotal:</p>
@@ -145,17 +150,17 @@
     
 
 </div>
-    <div class="data">
+    <div class="data" id="total">
     <p>Total:</p>
      <p>$1750</p>
 </div>
-<div class="Checkout">
+<div class="Checkout" id="Checkout">
     <input type="button" value="Process to Checkout">
 </div>
 </div>
-<div class="coupon">
+<div class="coupon" id="coupon">
     <input class="size space" type="text">
-    <button class="size">Apply coupon</button>
+    <button class="size" id="apply-coupon">Apply coupon</button>
 </div>
 <div class="a"></div>
  <footer>

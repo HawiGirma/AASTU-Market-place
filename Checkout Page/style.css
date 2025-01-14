@@ -21,7 +21,7 @@ body {
     margin-bottom: 5px;
 }
 
-.checkout {
+ .checkout {
     display: flex;
     flex-direction: column;
     padding: 3rem;
@@ -29,40 +29,34 @@ body {
     padding-left: 8rem;
     margin-top: 3rem;
 }
-
-.checkout > h2 {
+ .checkout > h2 {
     font-weight: 900; 
     margin-left: 0.4rem;
     margin-bottom: 0.9rem;
 }
-
-.checkout > .form-info {
+ .checkout >form .form-info {
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
 }
-
-.checkout > .form-info > input {
+ .checkout >form .form-info > input {
     padding: 0.35rem;
     background-color: whitesmoke;
     border: none;
 }
-
-.checkout > .form-info > label {
+ .checkout >form .form-info > label {
     margin: 0.2rem;
     opacity: 0.5;
 }
-
-.checkout > .form-info > label > sup {
+ .checkout >form .form-info > label > sup {
     color: red;
 }
-
-.checkout > .tick {
+ .checkout >form .tick {
     margin-left: 0.5rem;
     margin-top: 0.35rem;
 }
 
-.checkout > .tick > label {
+.checkout >form .tick > label {
     font-size: small;
     margin-left: 0.6rem;
 }
@@ -201,7 +195,7 @@ input[type="checkbox"]:checked:after {
 }
 
 .coupon > .space {
-   margin-right: 1rem;
+   
    border-radius: 5px; 
 }
 
@@ -221,18 +215,18 @@ input[type="checkbox"]:checked:after {
    margin-top: 1rem; 
 }
 
-.order > button {
-   margin-right: 13.9rem; 
+.order > button { 
    background-color: #004f7d; 
    color: white; 
    padding: 0.9rem; 
-   border-radius: 5px; 
+   border-radius: 5px;
+   border: none; 
    cursor: pointer; 
 }
 
 .order > button:hover {
    background-color: #00a9e3; 
-   border: none; 
+   
 }
 
 /* Media Queries */

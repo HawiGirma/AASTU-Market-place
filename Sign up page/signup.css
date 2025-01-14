@@ -68,6 +68,7 @@
     
   }
   
+  
   input {
     padding: 7.5px;
     width: 170%;
@@ -78,7 +79,7 @@
   input:focus {
     border:1px solid #004f7d;
   }
-
+ 
   .option {
     display: flex;
   }
@@ -179,3 +180,15 @@
       background-image: none;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+  

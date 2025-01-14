@@ -69,7 +69,13 @@
     right: 4rem;
     margin-top: 5%;
   }
-  
+  .container {
+    
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+
   input {
     padding: 7.5px;
     width: 170%;
@@ -177,3 +183,15 @@
       background-image: none;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+ 

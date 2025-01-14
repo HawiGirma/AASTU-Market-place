@@ -22,8 +22,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Poppins:wght@100..900&family=Sora:wght@100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Sora:wght@100..800&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
 
@@ -90,14 +94,21 @@
         </div>
         <div class="banner">
           <div class="banner-content">
-            <img src="/Assets/Apple-logo.png" alt="Apple Logo" class="logo" />
-            <h2>iPhone 14 Series</h2>
-            <p class="discount">Up to 10% off Voucher</p>
-            <a href="#" class="shop-now">Shop Now &rarr;</a>
+            <img
+              id="appleLogo"
+              src="/Assets/Apple-logo.png"
+              alt="Apple Logo"
+              class="logo"
+            />
+            <h2 id="text1">iPhone 14 Series</h2>
+            <p id="text2">Up to 10% off Voucher</p>
+            <a href="/Sign up page/signup.html" class="shop-now"
+              >Shop Now &rarr;</a
+            >
             <div class="dots">
-              <span></span>
-              <span class="active"></span>
-              <span></span>
+              <span id="1"></span>
+              <span id="2" class="active"></span>
+              <span id="3"></span>
             </div>
           </div>
           <img src="/Assets/iphone.png" alt="iPhone 14" class="banner-image" />
@@ -733,5 +744,6 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="/JavaScript/Script1.js" defer></script>
   </body>
 </html>

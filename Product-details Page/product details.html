@@ -31,7 +31,11 @@
     <link rel="stylesheet"
      href="./style.css">
     <title>Product-details</title>
-    
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script type="module" src="/JavaScript/Script1.js" defer></script>
 </head>
 <body>
   <header>
@@ -70,7 +74,7 @@
           <a href="/Cart Page/index.html"
             ><img src="/Assets/Cart1.png" alt="View Cart"
           /></a>
-          <a href="/Account Settings/AccountSetting page.html"
+          <a id="AccountSetting" href="/Account Settings/AccountSetting page.html"
             ><img src="/Assets/user.png" alt="Account Settings"
           /></a>
         </div>
@@ -131,21 +135,30 @@
         <input class="space" type="button" value="XL">
     </div>
     <input class="spin" type="number" min="1" max="20" required>
-    <input class="addcart" type="submit" value="Add to cart">
+    <input class="addcart" id="addcart" type="submit" value="Add to cart">
 
-        <div class="delivery">
+        <div class="delivery" id="delivery">
           <p>Free Delivery</p>
-          <a href="">Enter your postal code for delivery avalaibility</a>
+          <a href="#" id="check-delivery-link">Enter your postal code for delivery avalaibility</a>
+          <div id="postal-code-container" style="display: none;">
+            <input type="text" id="postal-code" placeholder="Enter your postal code">
+            <button id="check-delivery-btn">Check Delivery</button>
         </div>
-        </div>
+        <p id="delivery-message" style="color: green;"></p>
+    </div>
+       </div> 
         
+        
+    
+
 
             <div class="items">
               <h4 class="related">Related items</h4>
                 
            
-            <div class="item"  id=""> 
+            <div class="item"  id="item"> 
                 <img src="../Assets/Frame 611.png" alt="">
+                <div class="add-to-cart">Add to Cart</div>
                   
                   <i class="ri-heart-3-line love"></i>
                  
@@ -164,6 +177,7 @@
             </div>
             <div class="item" id="">
                 <img src="../Assets/Frame 612.png" alt="">
+                <div class="add-to-cart">Add to Cart</div>
                 <i class="ri-heart-line love"></i>
                 <i class="ri-eye-line eye"></i>
                 <div class="content">
@@ -179,6 +193,7 @@
             </div>
             <div class="item" id="">
                 <img src="../Assets/Frame 610.png" alt="">
+                <div class="add-to-cart">Add to Cart</div>
                 <i class="ri-heart-line love"></i>
                 <i class="ri-eye-line eye"></i>
                 <div class="content">
@@ -194,6 +209,7 @@
             </div>
             <div class="item" id="">
                 <img src="../Assets/Frame 613.png" alt="">
+                <div class="add-to-cart">Add to Cart</div>
                 <i class="ri-heart-line love"></i>
                 <i class="ri-eye-line eye"></i>
                 <div class="content">
@@ -214,7 +230,7 @@
       
     </div>
 
-    <div></div>
+    
     <div class="a"></div>
  <footer>
       <div class="support-container">
