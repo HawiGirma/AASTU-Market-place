@@ -115,7 +115,7 @@ function validateContactForm() {
 const dots = document.querySelectorAll(".dots span");
 const bannerContainer = document.querySelector(".banner");
 const images = [
-  "/Assets/playstation-5.png", // Replace with actual image paths // Add the third image path
+  "/Assets/playstation-5.png", // Replace with actual image paths
   "/Assets/Mac.svg",
 ];
 
@@ -132,40 +132,52 @@ window.onload = () => {
   document.getElementById("appleLogo").style.display = "none";
 };
 
+// Function to change the slide
+const changeSlide = (index) => {
+  dots.forEach((dot) => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+
+  if (index === 0) {
+    bannerContainer.style.backgroundImage = `url(${images[0]})`;
+    document.querySelector(".banner-image").style.display = "none";
+    document.getElementById("text1").innerHTML = "PS5 Pro Series";
+    document.querySelector(".banner").style.alignItems = "center";
+    document.getElementById("appleLogo").style.display = "none";
+  } else if (index === 1) {
+    bannerContainer.style.background = "black";
+    document.querySelector(".banner-image").style.display = "block";
+    document.getElementById("text1").innerHTML = "Iphone Series";
+    document.getElementById("appleLogo").style.display = "block";
+    document.querySelector(".banner").style.alignItems = "center";
+  } else if (index === 2) {
+    bannerContainer.style.backgroundImage = `url(${images[1]})`;
+    document.querySelector(".banner-image").style.display = "none";
+    document.getElementById("text1").innerHTML = "MacBook Series";
+    document.getElementById("appleLogo").style.display = "block";
+    document.querySelector(".banner").style.alignItems = "center";
+  }
+
+  bannerContainer.style.backgroundSize = "cover";
+  bannerContainer.style.backgroundPosition = "center";
+};
+
+// Click event for dots
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
-    // Remove active class from all dots
-    dots.forEach((dot) => dot.classList.remove("active"));
-
-    // Add active class to the clicked dot
-    dot.classList.add("active");
-
-    // Update the banner image based on the clicked dot
-    if (index === 0) {
-      bannerContainer.style.backgroundImage = `url(${images[0]})`;
-      document.querySelector(".banner-image").style.display = "none";
-      document.getElementById("text1").innerHTML = "PS5 Pro Series";
-      document.querySelector(".banner").style.alignItems = "flex-end";
-      document.getElementById("appleLogo").style.display = "none";
-    } else if (index === 1) {
-      bannerContainer.style.background = "black";
-      document.querySelector(".banner-image").style.display = "block";
-      document.getElementById("text1").innerHTML = "Iphone Series";
-      document.getElementById("appleLogo").style.display = "block";
-      document.querySelector(".banner").style.alignItems = "center";
-    } else if (index === 2) {
-      bannerContainer.style.backgroundImage = `url(${images[1]})`;
-      document.querySelector(".banner-image").style.display = "none";
-      document.getElementById("text1").innerHTML = "MacBook Series";
-      document.getElementById("appleLogo").style.display = "block";
-      document.querySelector(".banner").style.alignItems = "center";
-    }
-
-    bannerContainer.style.backgroundSize = "cover";
-    bannerContainer.style.backgroundPosition = "center";
+    changeSlide(index);
     dot.preventDefault();
   });
 });
+
+//Automatic slideshow functionality
+let currentIndex = 0;
+const totalDots = dots.length;
+
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalDots; // Cycle through the dots
+  changeSlide(currentIndex);
+}, 3000); 
+
 
 //js applied on product details page
 document.addEventListener('DOMContentLoaded', () => {
