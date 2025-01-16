@@ -3,7 +3,7 @@ const lastDiv = document.querySelector("footer div:last-child");
 const newDiv = document.createElement("div");
 newDiv.innerHTML = `
     <p class="currentYear">
-        &copy; <span id="current-year"></span> My Website. All rights reserved.
+        &copy; <span id="current-year"></span> AASTU MarketPlace. All rights reserved.
     </p>
 `;
 lastDiv.after(newDiv);
@@ -109,7 +109,7 @@ function validateContactForm() {
   const form = document.getElementsByClassName("myForm");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (name === "" || email === "" || phone === "" || message === "") {
+    if (!name || !email || !phone || !message) {
       alert("Please fill Every Fields");
     }
   });
