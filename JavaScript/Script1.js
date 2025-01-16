@@ -3,7 +3,7 @@ const lastDiv = document.querySelector("footer div:last-child");
 const newDiv = document.createElement("div");
 newDiv.innerHTML = `
     <p class="currentYear">
-        &copy; <span id="current-year"></span> My Website. All rights reserved.
+        &copy; <span id="current-year"></span> AASTU MarketPlace. All rights reserved.
     </p>
 `;
 lastDiv.after(newDiv);
@@ -102,13 +102,23 @@ if (AccountSetting) {
 }
 //contact us page Form validation (Contact Us page example placeholder)
 function validateContactForm() {
-  const emailField = document.querySelector('input[name="email"]');
-  if (!emailField.value.includes("@")) {
-    alert("Please enter a valid email address.");
-    return false;
-  }
-  alert("Form submitted successfully!");
-  return true;
+  const name = document.getElementsByName("FullName").value;
+  const email = document.getElementsByName("EmailAddress").value;
+  const phone = document.getElementsByName("PhoneNumber").value;
+  const message = document.getElementsByName("Message").value;
+  const form = document.getElementsByClassName("myForm");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!name || !email || !phone || !message) {
+      alert("Please fill Every Fields");
+    }
+  });
+  // if (!emailField.value.includes("@")) {
+  //   alert("Please enter a valid email address.");
+  //   return false;
+  // }
+  // alert("Form submitted successfully!");
+  // return true;
 }
 
 //Js added on home Page
@@ -180,145 +190,132 @@ setInterval(() => {
 
 
 //js applied on product details page
-document.addEventListener('DOMContentLoaded', () => {
-  
+document.addEventListener("DOMContentLoaded", () => {
   let cartCount = 0;
 
   // Create a function to update the cart count display
   function updateCartCount() {
-      let cartCountElement = document.getElementById('cart-count');
-      if (!cartCountElement) {
-          cartCountElement = document.createElement('span');
-          cartCountElement.id = 'cart-count';
-          cartCountElement.className = 'cart-count';
-          document.querySelector('.btns').appendChild(cartCountElement);
-      }
-      cartCountElement.innerText = cartCount;
+    let cartCountElement = document.getElementById("cart-count");
+    if (!cartCountElement) {
+      cartCountElement = document.createElement("span");
+      cartCountElement.id = "cart-count";
+      cartCountElement.className = "cart-count";
+      document.querySelector(".btns").appendChild(cartCountElement);
+    }
+    cartCountElement.innerText = cartCount;
   }
 
   // Function to handle adding products to the cart
   function addToCart() {
-      if (!selectedSize) {
-          alert('Please select a size before adding to the cart!');
-          return;
-      }
-      cartCount++;
-      updateCartCount();
-      alert(`product added to cart! Size: ${selectedSize}`); 
+    if (!selectedSize) {
+      alert("Please select a size before adding to the cart!");
+      return;
+    }
+    cartCount++;
+    updateCartCount();
+    alert(`product added to cart! Size: ${selectedSize}`);
   }
 
-  const addToCartButton = document.getElementById('addcart');
-  
+  const addToCartButton = document.getElementById("addcart");
+
   // Add event listener for the button
-  addToCartButton.addEventListener('click', addToCart);
+  addToCartButton.addEventListener("click", addToCart);
 
   // Initialize the cart count display
   updateCartCount();
 
   // Size selection functionality
-  let selectedSize = null; 
+  let selectedSize = null;
 
-  const sizeButtons = document.querySelectorAll('.size .space');
+  const sizeButtons = document.querySelectorAll(".size .space");
 
-  sizeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-          // Deselect all buttons
-          sizeButtons.forEach(btn => btn.classList.remove('selected'));
-          
-          // Select the clicked button
-          button.classList.add('selected');
-          selectedSize = button.value; // Store the selected size
-      });
+  sizeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Deselect all buttons
+      sizeButtons.forEach((btn) => btn.classList.remove("selected"));
+
+      // Select the clicked button
+      button.classList.add("selected");
+      selectedSize = button.value; // Store the selected size
+    });
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-
+document.addEventListener("DOMContentLoaded", () => {
   // Delivery functionality
-  const checkDeliveryLink = document.getElementById('check-delivery-link');
-  const postalCodeContainer = document.getElementById('postal-code-container');
-  const checkDeliveryBtn = document.getElementById('check-delivery-btn');
-  const postalCodeInput = document.getElementById('postal-code');
-  const deliveryMessage = document.getElementById('delivery-message');
+  const checkDeliveryLink = document.getElementById("check-delivery-link");
+  const postalCodeContainer = document.getElementById("postal-code-container");
+  const checkDeliveryBtn = document.getElementById("check-delivery-btn");
+  const postalCodeInput = document.getElementById("postal-code");
+  const deliveryMessage = document.getElementById("delivery-message");
 
   // Show the postal code input when the link is clicked
-  checkDeliveryLink.addEventListener('click', (event) => {
-      event.preventDefault(); 
-      postalCodeContainer.style.display = 'block'; 
-      deliveryMessage.innerText = ''; // Clear any previous messages
+  checkDeliveryLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    postalCodeContainer.style.display = "block";
+    deliveryMessage.innerText = ""; // Clear any previous messages
   });
 
   // Check delivery availability when the button is clicked
-  checkDeliveryBtn.addEventListener('click', () => {
-      const postalCode = postalCodeInput.value.trim();
+  checkDeliveryBtn.addEventListener("click", () => {
+    const postalCode = postalCodeInput.value.trim();
 
-      if (postalCode === '') {
-          deliveryMessage.innerText = 'Please enter a valid postal code.';
-          return;
-      }
+    if (postalCode === "") {
+      deliveryMessage.innerText = "Please enter a valid postal code.";
+      return;
+    }
 
-      //  checking delivery availability with a random result
-      const isDeliveryAvailable = Math.random() > 0.5; 
+    //  checking delivery availability with a random result
+    const isDeliveryAvailable = Math.random() > 0.5;
 
-      if (isDeliveryAvailable) {
-          deliveryMessage.innerText = 'Delivery is available in your area!';
-      } else {
-          deliveryMessage.innerText = 'Sorry, we do not deliver to your area.';
-      }
+    if (isDeliveryAvailable) {
+      deliveryMessage.innerText = "Delivery is available in your area!";
+    } else {
+      deliveryMessage.innerText = "Sorry, we do not deliver to your area.";
+    }
   });
 });
-document.querySelectorAll('.item').forEach(item => {
-  item.addEventListener('mouseenter', () => {
-      console.log('Hovered over:', item.querySelector('.content p').innerText);
+document.querySelectorAll(".item").forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    console.log("Hovered over:", item.querySelector(".content p").innerText);
   });
 });
 
 //js apllied on checkout page
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('billing-form');
-  const confirmationMessage = document.getElementById('confirmation-message');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("billing-form");
+  const confirmationMessage = document.getElementById("confirmation-message");
 
   // Form submission handling
-  form.addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent the default form submission
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent the default form submission
 
-      // Simple validation 
-      if (!form.checkValidity()) {
-          alert('Please fill out all required fields.');
-          return;
-      }
+    // Simple validation
+    if (!form.checkValidity()) {
+      alert("Please fill out all required fields.");
+      return;
+    }
 
-      // Handle saving information 
-      const saveInfo = document.getElementById('check').checked;
-      if (saveInfo) {
-          
-          console.log('User information will be saved for next time.');
-      }
+    // Handle saving information
+    const saveInfo = document.getElementById("check").checked;
+    if (saveInfo) {
+      console.log("User information will be saved for next time.");
+    }
 
-      // Display confirmation message
-      confirmationMessage.textContent = 'Thank you! Your billing details have been submitted.';
-      confirmationMessage.style.color = 'green';
+    // Display confirmation message
+    confirmationMessage.textContent =
+      "Thank you! Your billing details have been submitted.";
+    confirmationMessage.style.color = "green";
 
-      // Optionally reset the form
-      form.reset();
+    // Optionally reset the form
+    form.reset();
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
- const productdetails =document.getElementById('ps');
- productdetails.addEventListener('click', () => {
-   window.location.href = '/Product-details Page/product details.html';
- });
+document.addEventListener("DOMContentLoaded", () => {
+  const productdetails = document.getElementById("ps");
+  productdetails.addEventListener("click", () => {
+    window.location.href = "/Product-details Page/product details.html";
+  });
 });
-
-
-
-
-
-
-
-
-
-
