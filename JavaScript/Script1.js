@@ -294,7 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
+document.addEventListener('DOMContentLoaded', () => {
+ const productdetails =document.getElementById('ps');
+ productdetails.addEventListener('click', () => {
+   window.location.href = '/Product-details Page/product details.html';
+ });
+});
 
 
 

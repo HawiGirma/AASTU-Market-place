@@ -96,7 +96,7 @@
         padding: 8px 80px; 
     }
     
-    .cart-total > .Checkout > input {
+    .cart-total > .Checkout > a > input {
         margin-right: 8.5rem;
         padding: 10px;
         margin-bottom: 10px;
@@ -107,7 +107,7 @@
         cursor: pointer;
     }
     
-    .cart-total > .Checkout > input:hover {
+    .cart-total > .Checkout > a > input:hover {
         background-color: #00a9e3;   
     }
     
